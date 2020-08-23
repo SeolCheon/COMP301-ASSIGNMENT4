@@ -26,8 +26,11 @@ def sentence():
 
 def nounPhrase():
     """Builds and returns a noun phrase."""
-    
-    return random.choice(articles) + " " + random.choice(nouns)
+    optAdjective = ""
+    adjectiveChance = random.randrange(100) +1
+    if(adjectiveChance > 50):
+        optAdjective = random.choice(adjectives)
+    return random.choice(articles) + " " + optAdjective +" " + random.choice(nouns)
 
 def verbPhrase():
     """Builds and returns a verb phrase."""
