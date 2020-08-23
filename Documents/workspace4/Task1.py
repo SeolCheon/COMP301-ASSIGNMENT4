@@ -11,6 +11,11 @@ words from the file, and add them to the list. The function should then convert 
 to a tuple and return this tuple. Call the function with an actual filename to initialize
 each of the four variables for the vocabulary.)
 """
+import random
+articles = ("A", "THE")
+nouns = ("BOY", "GIRL", "BAT", "BALL",)
+verbs = ("HIT", "SAW", "LIKED")
+prepositions = ("WITH", "BY")
 
 """define new function that has a filename as an argument"""
 def getWords(fileName):
@@ -35,6 +40,22 @@ def getWords(fileName):
 
     """return the tuple"""
     return words
+
+def sentence():
+    """Builds and returns a sentence."""
+    return nounPhrase() + " " + verbPhrase()
+
+def nounPhrase():
+    """Builds and returns a noun phrase."""
+    return random.choice(articles) + " " + random.choice(nouns)
+
+def verbPhrase():
+    """Builds and returns a verb phrase."""
+    return random.choice(verbs) + " " + nounPhrase() + " " + prepositionalPhrase()
+
+def prepositionalPhrase():
+    """Builds and returns a prepositional phrase."""
+    return random.choice(prepositions) + " " + nounPhrase()    
 
 
 def main():

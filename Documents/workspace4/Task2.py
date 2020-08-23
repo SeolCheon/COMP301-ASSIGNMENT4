@@ -1,7 +1,15 @@
 """
-Program: generator.py
-Generates and displays sentences using simple grammar
-and vocabulary. Words are chosen at random.
+File name : Task2.py
+Author's name : Seol Cheon
+Student Number : 301113120
+File description :  Task 2 of assignment4.
+
+Make the following modifications to the original sentence-generator program
+a. The prepositional phrase is optional. (It can appear with a certain probability.)
+b. A conjunction and a second independent clause are optional: The boy took a drink and
+   the girl played baseball.
+c. An adjective is optional: The girl kicked the red ball with a sore foot.
+d. You should add new variables for the sets of adjectives and conjunctions
 """
 
 import random
