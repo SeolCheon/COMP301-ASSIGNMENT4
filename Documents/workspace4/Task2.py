@@ -13,29 +13,34 @@ d. You should add new variables for the sets of adjectives and conjunctions
 """
 
 import random
+
 articles = ("A", "THE")
 nouns = ("BOY", "GIRL", "BAT", "BALL",)
 verbs = ("HIT", "SAW", "LIKED")
 prepositions = ("WITH", "BY")
 conjunctions = ("FOR", "AND", "BUT", "NOR", "OR")
 adjectives = ("CUTE", "FAST", "SMALL", "NICE")
+    """variables for the sets of words"""
 
 def sentence():
-    """Builds and returns a sentence."""
+    """Builds and returns a sentence with optional conjuction and a second independent clause"""
     
     optIndClause = ""
     indepClauseChance = random.randrange(100) +1
     if(indepClauseChance >50) :
         optIndClause = random.choice(conjunctions)+ " "+ nounPhrase() + " " + verbPhrase()
-
+            """put conjuctions and second independent clause with 50% of probability after a independent sentece"""
     return nounPhrase() + " " + verbPhrase() + " " + optIndClause
+            
 
 def nounPhrase():
-    """Builds and returns a noun phrase."""
+    """Builds and returns a noun phrase with optional an adjective"""
     optAdjective = ""
     adjectiveChance = random.randrange(100) +1
     if(adjectiveChance > 50):
         optAdjective = random.choice(adjectives)
+        """put adjective with 50 % of  probability before a noun"""
+
     return random.choice(articles) + " " + optAdjective +" " + random.choice(nouns)
 
 def verbPhrase():
@@ -44,6 +49,7 @@ def verbPhrase():
     prepPhraseChance = random.randrange(100) + 1
     if(prepPhraseChance > 50):
         optPrepPhrase =prepositionalPhrase()
+        """put prepositional Phrase with 50% probability after verbPhrase"""
     return random.choice(verbs) + " " + nounPhrase() + " " + optPrepPhrase
 
 def prepositionalPhrase():
@@ -56,5 +62,6 @@ def main():
     number = int(input("Enter the number of sentences: "))
     for count in range(number):
         print(sentence())
+        """print the sentences"""
         
 main()
