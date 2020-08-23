@@ -17,12 +17,18 @@ articles = ("A", "THE")
 nouns = ("BOY", "GIRL", "BAT", "BALL",)
 verbs = ("HIT", "SAW", "LIKED")
 prepositions = ("WITH", "BY")
-conjuctions = ("FOR", "AND", "BUT", "NOR", "OR")
+conjunctions = ("FOR", "AND", "BUT", "NOR", "OR")
 adjectives = ("CUTE", "FAST", "SMALL", "NICE")
 
 def sentence():
     """Builds and returns a sentence."""
-    return nounPhrase() + " " + verbPhrase()
+    
+    optIndClause = ""
+    indepClauseChance = random.randrange(100) +1
+    if(indepClauseChance >50) :
+        optIndClause = random.choice(conjunctions)+ " "+ nounPhrase() + " " + verbPhrase()
+
+    return nounPhrase() + " " + verbPhrase() + " " + optIndClause
 
 def nounPhrase():
     """Builds and returns a noun phrase."""
