@@ -20,7 +20,7 @@ verbs = ("HIT", "SAW", "LIKED")
 prepositions = ("WITH", "BY")
 conjunctions = ("FOR", "AND", "BUT", "NOR", "OR")
 adjectives = ("CUTE", "FAST", "SMALL", "NICE")
-    """variables for the sets of words"""
+"""variables for the sets of words"""
 
 def sentence():
     """Builds and returns a sentence with optional conjuction and a second independent clause"""
@@ -29,7 +29,7 @@ def sentence():
     indepClauseChance = random.randrange(100) +1
     if(indepClauseChance >50) :
         optIndClause = random.choice(conjunctions)+ " "+ nounPhrase() + " " + verbPhrase()
-            """put conjuctions and second independent clause with 50% of probability after a independent sentece"""
+    """put conjuctions and second independent clause with 50% of probability after a independent sentece"""
     return nounPhrase() + " " + verbPhrase() + " " + optIndClause
             
 
